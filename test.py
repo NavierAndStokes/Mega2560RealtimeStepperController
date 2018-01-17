@@ -49,9 +49,20 @@ if ser.read(1) == 'S'.encode():
             print(strpacket)
             #time.sleep(0.1)
             # Print mirrored data from arduino:
+<<<<<<< HEAD
             print('Arduino Replies:')
             print(ser.readline())
 >>>>>>> removed trailing whitespaces
+=======
+            print('Arduino Replied:')
+            response = ser.readline()
+            print(response)
+            # Get how many items are in the buffer
+            inbuffer = int(response.rstrip().split('B'.encode())[1])
+            #Since the stepper service is running at 1000hz, waiting 0.1s should clear 100 items in the buffer
+            if  inbuffer > 900:
+                time.sleep(0.1)
+>>>>>>> Added a pause if the buffer was getting full
     file.close
 else:
     print('Handshake failed')
