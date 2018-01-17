@@ -46,6 +46,7 @@ void loop()
       {
         pushToCircularBuffer(IncomingData);
       }
+<<<<<<< HEAD
     Serial.print("B");
     Serial.print(itemsInCircularBuffer());
     Serial.println();
@@ -56,6 +57,24 @@ void loop()
 //      Serial.print(itemsInCircularBuffer());
 //      Serial.println();
 //    }
+=======
+    //Send status after each 200 data parts
+    if (Counter == 200)
+    {
+      Counter = 0;
+      Serial.print('[');
+      for(int i = 0; i<6; i++)
+      {
+        Serial.print(IncomingData[i]);
+        if(i == 5) continue;
+        Serial.print(", ");
+      }
+      Serial.print(']');
+      Serial.print(" B");
+      Serial.print(itemsInCircularBuffer());
+      Serial.println();
+    }
+>>>>>>> upgraded to 3125Hz, mirror every 200th data point
   }
   // to check how many items remain in the executionbuffer use:
   //itemsInCircularBuffer();

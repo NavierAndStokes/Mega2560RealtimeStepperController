@@ -37,6 +37,7 @@ if ser.read(1) == 'S'.encode():
         # Send the 6 bytes:
         ser.write(packet)
 <<<<<<< HEAD
+<<<<<<< HEAD
         #time.sleep(0.1)
         # Print mirrored data from arduino:
         print('Arduino Replies:')
@@ -44,6 +45,9 @@ if ser.read(1) == 'S'.encode():
     
 =======
         if counter == 100:
+=======
+        if counter == 200:
+>>>>>>> upgraded to 3125Hz, mirror every 200th data point
             counter = 0
             print('Python sent:')
             print(strpacket)
@@ -59,8 +63,8 @@ if ser.read(1) == 'S'.encode():
             print(response)
             # Get how many items are in the buffer
             inbuffer = int(response.rstrip().split('B'.encode())[1])
-            #Since the stepper service is running at 2000hz, waiting 0.1s should clear 200 items in the buffer
-            if  inbuffer > 900:
+            #Since the stepper service is running at 3125Hz, waiting 0.1s should clear at least 312 items in the buffer
+            if  inbuffer > 800:
                 time.sleep(0.1)
 >>>>>>> Added a pause if the buffer was getting full
     file.close
