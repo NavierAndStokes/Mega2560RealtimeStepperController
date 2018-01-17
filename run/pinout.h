@@ -8,16 +8,16 @@ void setupOutputs(void)
 	DDRF  = 0xFF;
 	DDRK  = 0xFF;
 	DDRA  = 0xFF;
-	
+
 	DDRC  = 0xFF;
 	DDRL  = 0xFF;
 	DDRH  = 0xFF;
-	
+
 	//WRITE 0 TO ALL OUTPUTS
 	PORTF  = 0x00;
 	PORTK  = 0x00;
 	PORTA  = 0x00;
-	
+
 	PORTC  = 0x00;
 	PORTL  = 0x00;
 	PORTH  = 0x00;

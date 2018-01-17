@@ -40,7 +40,7 @@ ISR(TIMER1_COMPA_vect)          // timer compare interrupt service routine
   OCR1A += 80; //0.32 ms  ->3125Hz
   //If there is anything in the buffer, push it into the pin outputs
   if(popFromCircularBuffer(tmp))
-  { 
+  {
 	//SET THE DIRECTIONS:
 	setDirections(tmp[3],tmp[4],tmp[5]);
 	//SET B INTERRUPT TO START THE PULSES 20 µs INTO THE FUTURE
