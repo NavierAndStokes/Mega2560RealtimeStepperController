@@ -7,6 +7,7 @@ import time
 #initiate communication (make sure to press reset on the arduino before starting):
 ser = serial.Serial('/dev/ttyACM0',230400, timeout = 1)
 time.sleep(0.5)
+ser.read()
 ser.write('S'.encode())
 if ser.read(1) == 'S'.encode():
     print('Communication Started\n')
