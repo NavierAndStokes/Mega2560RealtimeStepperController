@@ -8,8 +8,8 @@
 //PORTS C, L, AND H ARE USED FOR THE DIRECTIONS
 
 /*The buffer can hold up to 1000 output 6-byte datasets (can be modified within circularbuffer.h)
-Outputs are executed at a rate of 1000 Hz as long as the buffer isn't empty, it first sets the directions, 
-then waits 20 µs and writes the pulses, then waits another 20 µs to end the pulses, pulse durations, delays and frequencies can be set within (services.h)
+Outputs are executed at a rate of 3125 Hz as long as the buffer isn't empty, it first sets the directions, 
+then waits 20 µs and writes the pulses, then waits another 20 µs to end the pulses, pulse durations, delays and frequencies can be set within (stepperservice.h)
 */
 
 byte IncomingData[6]; // first 3 bytes for ports F, K, A (for pulses), last 3 bytes for ports C, L, H

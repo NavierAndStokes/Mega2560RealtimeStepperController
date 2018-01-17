@@ -42,7 +42,7 @@ ISR(TIMER1_COMPA_vect)          // timer compare interrupt service routine
   if(popFromCircularBuffer(tmp))
   {
 	//SET THE DIRECTIONS:
-	setDirections(tmp[3],tmp[4],tmp[5]);
+	setDirections(tmp[0],tmp[1],tmp[2]);
 	//SET B INTERRUPT TO START THE PULSES 20 µs INTO THE FUTURE
 	OCR1B = TCNT1 + 5; //20 µs
 	//ENABLE B INTERRUPT
@@ -55,7 +55,7 @@ ISR(TIMER1_COMPB_vect) {
 	//DISABLE B INTERRUPT
 	TIMSK1 &= ~(1 << OCIE1B);
     //CODE TO START THE PULSES
-	startPulses(tmp[0],tmp[1],tmp[2]);
+	startPulses(tmp[3],tmp[4],tmp[5]);
 	//SET C INTERRUPT TO 20 µs INTO THE FUTURE
 	OCR1C = TCNT1 + 5; //20 µs
 	//ENABLE C INTERRUPT
