@@ -19,8 +19,8 @@ void setup()
 {
   setupOutputs();
   setupStepperService(); //Step execution starts automatically
-    // start serial port at 9600 bps:
-  Serial.begin(115200);
+    // start serial port at 230400 bps:
+  Serial.begin(230400);
   while (!Serial) {
     ; // wait for serial port to connect. Needed for Leonardo only
   }

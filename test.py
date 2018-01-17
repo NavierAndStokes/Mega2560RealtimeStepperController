@@ -5,7 +5,7 @@ Serial Binary 6 byte sender
 import serial
 import time
 #initiate communication (make sure to press reset on the arduino before starting):
-ser = serial.Serial('/dev/ttyACM0',115200, timeout = 1)
+ser = serial.Serial('/dev/ttyACM0',230400, timeout = 1)
 time.sleep(0.5)
 ser.write('S'.encode())
 if ser.read(1) == 'S'.encode():
@@ -59,7 +59,7 @@ if ser.read(1) == 'S'.encode():
             print(response)
             # Get how many items are in the buffer
             inbuffer = int(response.rstrip().split('B'.encode())[1])
-            #Since the stepper service is running at 1000hz, waiting 0.1s should clear 100 items in the buffer
+            #Since the stepper service is running at 2000hz, waiting 0.1s should clear 200 items in the buffer
             if  inbuffer > 900:
                 time.sleep(0.1)
 >>>>>>> Added a pause if the buffer was getting full

@@ -37,7 +37,7 @@ void setupStepperService(void) { //    PB4:7 become unavailable!.
 ISR(TIMER1_COMPA_vect)          // timer compare interrupt service routine
 {
   //OCR1A = TCNT1 + 250; //1 ms  ->1000Hz
-  OCR1A += 250; //1 ms  ->1000Hz
+  OCR1A += 125; //0.5 ms  ->2000Hz
   //If there is anything in the buffer, push it into the pin outputs
   if(popFromCircularBuffer(tmp))
   { 
