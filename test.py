@@ -39,6 +39,7 @@ if ser.read(1) == 'S'.encode():
         ser.write(packet)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         #time.sleep(0.1)
         # Print mirrored data from arduino:
         print('Arduino Replies:')
@@ -50,8 +51,13 @@ if ser.read(1) == 'S'.encode():
         if counter == 200:
 >>>>>>> upgraded to 3125Hz, mirror every 200th data point
             counter = 0
+=======
+        if counter == 100:
+>>>>>>> Arduino now mirrors 100 data-points early, so that the python code doesn't need to wait when reading the response
             print('Python sent:')
             print(strpacket)
+        if counter == 200:
+            counter = 0
             #time.sleep(0.1)
             # Print mirrored data from arduino:
 <<<<<<< HEAD

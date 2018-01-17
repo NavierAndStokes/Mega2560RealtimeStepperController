@@ -13,7 +13,7 @@ then waits 20 µs and writes the pulses, then waits another 20 µs to end the pu
 */
 
 byte IncomingData[6]; // first 3 bytes for ports F, K, A (for pulses), last 3 bytes for ports C, L, H
-uint8_t Counter = 0;
+uint8_t Counter = 100;
 //within the setup function call:
 void setup()
 {
