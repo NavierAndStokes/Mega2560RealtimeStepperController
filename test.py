@@ -36,11 +36,22 @@ if ser.read(1) == 'S'.encode():
         print(strpacket)
         # Send the 6 bytes:
         ser.write(packet)
+<<<<<<< HEAD
         #time.sleep(0.1)
         # Print mirrored data from arduino:
         print('Arduino Replies:')
         print(ser.readline())
     
+=======
+        if counter == 100:
+            counter = 0
+            print('Python sent:')
+            print(strpacket)
+            #time.sleep(0.1)
+            # Print mirrored data from arduino:
+            print('Arduino Replies:')
+            print(ser.readline())
+>>>>>>> removed trailing whitespaces
     file.close
 else:
     print('Handshake failed')
