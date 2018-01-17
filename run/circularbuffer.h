@@ -20,7 +20,7 @@ inline unsigned int availableSpaceInCircularBuffer(void)
 
 inline void advanceEndIndex()
 {
-	if(IndexEnd == BUFFER_SIZE)
+	if(IndexEnd == BUFFER_SIZE - 1)
 	{
 		IndexEnd = 0;
 	}
@@ -32,7 +32,7 @@ inline void advanceEndIndex()
 
 inline void advanceStartIndex()
 {
-	if(IndexStart == BUFFER_SIZE)
+	if(IndexStart == BUFFER_SIZE - 1)
 	{
 		IndexStart = 0;
 	}
