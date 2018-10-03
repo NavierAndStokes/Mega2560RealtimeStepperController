@@ -29,15 +29,16 @@ void setupStepperService(void) { //    PB4:7 become unavailable!.
   // TCCR1B |= (1 << WGM12);   // CTC mode (see pag 144 datasheet)
   TCCR1B = 0;  // Normal mode (In normal mode B and C compare are available, see pag 144-145 datasheet)
   TCCR1B |= (1 << CS11)|(1 << CS10);  // 64 prescaler  (see TCCRnB table in the datasheet) TABLE 17-6 page 157:
+//CPU clock: 16 MHZ : 1 cycle = 1/(16Mhz) = 1/16µs, prescaler = 64 => 1 timer increment = 64/16µs = 4µs.
   enableStepperService();
   interrupts();             // enable all interrupts
 }
 
-//A Services: running @ 1000HZ
+//A Services: running @ 3125HZ
 ISR(TIMER1_COMPA_vect)          // timer compare interrupt service routine
 {
   //OCR1A = TCNT1 + 250; //1 ms  ->1000Hz
-  OCR1A += 80; //0.32 ms  ->3125Hz
+  OCR1A += 80; //80 * 4µs = 0.32 ms  ->3125Hz
   //If there is anything in the buffer, push it into the pin outputs
   if(popFromCircularBuffer(tmp))
   {

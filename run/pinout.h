@@ -30,14 +30,14 @@ inline void endPulses(void)
 	PORTA  = 0x00;
 }
 
-inline void startPulses(byte portF, byte portK, byte portA)
+inline void startPulses(const byte& portF, const byte& portK, const byte& portA)
 {
 	PORTF = portF;
 	PORTK = portK;
 	PORTA = portA;
 }
 
-inline void setDirections(byte portC, byte portL, byte portH)
+inline void setDirections(const byte& portC, const byte& portL, const byte& portH)
 {
 	PORTC = portC;
 	PORTL = portL;
