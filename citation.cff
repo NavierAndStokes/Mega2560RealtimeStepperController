@@ -1,0 +1,9 @@
+
+@software{Mega2560RealtimeStepperController,
+  author = {Ernesto, Sanchez},
+  month = {02},
+  title = {Mega2560RealtimeStepperController},
+  url = {https://github.com/Mikwind/Mega2560RealtimeStepperController},
+  version = {1.0.1},
+  year = {2022}
+}
